@@ -40,4 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(`Task ${i} Added → Title: "${title}", Description: "${description}", Status: "${status}"`);
   }
 
+  // Display completed tasks or motivational message
+  const completedTasks = tasks.filter(task => task.status === "done");
+  if (completedTasks.length > 0) {
+    completedTasks.forEach(task =>
+      console.log(`Title: "${task.title}", Status: "done"`)
+    );
+  } else {
+    console.log("No tasks completed, let's get to work!");
+  }
 });
